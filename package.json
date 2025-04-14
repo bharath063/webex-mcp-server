@@ -1,0 +1,24 @@
+{
+  "name": "webex-mcp",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bharath063/webex-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "webex",
+    "webex-mcp"
+  ],
+  "author": "Bharath Balan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bharath063/webex-mcp/issues"
+  },
+  "homepage": "https://github.com/bharath063/webex-mcp#readme",
+  "description": ""
+}

@@ -1,9 +1,9 @@
 {
-  "name": "webex-mcp",
+  "name": "webex-mcp-server",
   "version": "0.0.1",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "inspect": "npx fastmcp inspect dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,19 @@
     "url": "https://github.com/bharath063/webex-mcp/issues"
   },
   "homepage": "https://github.com/bharath063/webex-mcp#readme",
-  "description": ""
+  "description": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=18.15.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "fastmcp": "^1.21.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "typescript": "^5.3.3"
+  }
 }

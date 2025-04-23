@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "scripts": {
     "build": "tsc",
-    "inspect": "npx fastmcp inspect dist/index.js"
+    "inspect": "npx fastmcp inspect dist/index.js",
+    "start": "npm run build && node dist/index.js"
   },
   "repository": {
     "type": "git",

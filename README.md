@@ -41,8 +41,8 @@ Add this to your Claude Desktop configuration file (~/Library/Application Suppor
 {
   "mcpServers": {
     "webex": {
-      "command": "node",
-      "args": ["/absolute/path/to/webex-mcp/dist/index.js"],
+      "command": "{{PATH_TO_NODE}}", // Run `which node` and place the output here
+      "args": ["/absolute/path/to/webex-mcp/dist/index.js"], // cd into the repo, run 'pwd'
       "env": {
         "WEBEX_ACCESS_TOKEN": "your_webex_access_token"
       }

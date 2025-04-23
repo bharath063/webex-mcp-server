@@ -72,8 +72,16 @@ function registerSendMessageToSpaceTool(server: FastMCP) {
     parameters: z.object({
       spaceId: z.string().describe("The URL of the image to show"),
       text: z.string().describe("The text to send"),
+      markdown: z.string().optional().describe("The markdown to send"),
+      adaptiveCard: z.string().optional().describe("The adaptive card to send. Note: only v1.3 is supported. Max image size is 80KB. Make sure to strip spaces in the card json"),
     }),
     execute: async (args, { log, reportProgress }) => {
+      let bodyContent: any = {
+        roomId: args.spaceId,
+        text: args.text,
+        attachments: args.adaptiveCard ? [{ contentType: "application/vnd.microsoft.card.adaptive", content: JSON.parse(args.adaptiveCard) }] : [],
+      };
+
       let resp = await fetch(`https://api.ciscospark.com/v1/messages`, {
         method: "POST",
         headers: {
@@ -83,6 +91,7 @@ function registerSendMessageToSpaceTool(server: FastMCP) {
         body: JSON.stringify({
           roomId: args.spaceId,
           text: args.text,
+          attachments: args.adaptiveCard ? [{ contentType: "application/vnd.microsoft.card.adaptive", content: JSON.parse(args.adaptiveCard) }] : [],
         }),
       });
 

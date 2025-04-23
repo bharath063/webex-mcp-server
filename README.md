@@ -40,7 +40,7 @@ Add this to your Claude Desktop configuration file (~/Library/Application Suppor
 ``` json
 {
   "mcpServers": {
-    "piapi": {
+    "webex": {
       "command": "node",
       "args": ["/absolute/path/to/webex-mcp/dist/index.js"],
       "env": {
